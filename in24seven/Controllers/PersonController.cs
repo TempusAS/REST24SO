@@ -10,7 +10,9 @@ namespace in24seven.Controllers
 {
     public class PersonController : In24SevenController
     {
-        // Return a list of persons from PersoonService
+        /// <summary>
+        /// Return a list of persons from PersoonService
+        /// </summary>
         public List<Models.Person> Get()
         {
             var personClient = new personRef.PersonService() { CookieContainer = GetCookies()};

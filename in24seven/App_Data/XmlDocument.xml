@@ -491,6 +491,11 @@
             Get a list of Categories from 24SO ProductService
             </summary>
         </member>
+        <member name="M:in24seven.Controllers.PersonController.Get">
+            <summary>
+            Return a list of persons from PersoonService
+            </summary>
+        </member>
         <member name="T:in24seven.autenticateRef.Authenticate">
             <remarks/>
         </member>
