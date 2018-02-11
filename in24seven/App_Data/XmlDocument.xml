@@ -1,0 +1,3138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>in24seven</name>
+    </assembly>
+    <members>
+        <member name="M:in24seven.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,in24seven.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:in24seven.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:in24seven.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:in24seven.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:in24seven.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:in24seven.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:in24seven.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,in24seven.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,in24seven.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(in24seven.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:in24seven.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},in24seven.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:in24seven.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:in24seven.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleKey.#ctor(in24seven.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:in24seven.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,in24seven.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:in24seven.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:in24seven.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:in24seven.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:in24seven.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:in24seven.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:in24seven.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:in24seven.Controllers.CategoryController">
+            <summary>
+            Get a list of Categories from 24SO ProductService
+            </summary>
+        </member>
+        <member name="M:in24seven.Controllers.CategoryController.Get">
+            <summary>
+            Get a list of Categories from 24SO ProductService
+            </summary>
+        </member>
+        <member name="T:in24seven.autenticateRef.Authenticate">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.AuthenticateByTokenCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.LoginCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.HasSessionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.GetIdentityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.GetIdentitiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.SetIdentityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.SetIdentityByIdCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialByServiceCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.AuthenticateByToken(in24seven.autenticateRef.Token)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.AuthenticateByTokenAsync(in24seven.autenticateRef.Token)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.AuthenticateByTokenAsync(in24seven.autenticateRef.Token,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.Login(in24seven.autenticateRef.Credential)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.LoginAsync(in24seven.autenticateRef.Credential)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.LoginAsync(in24seven.autenticateRef.Credential,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.HasSession">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.HasSessionAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.HasSessionAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentity">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentityAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentityAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentities">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentity(in24seven.autenticateRef.Identity)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentityAsync(in24seven.autenticateRef.Identity)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentityAsync(in24seven.autenticateRef.Identity,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentityById(System.Guid)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentityByIdAsync(System.Guid)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.SetIdentityByIdAsync(System.Guid,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredential(in24seven.autenticateRef.Credential)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialAsync(in24seven.autenticateRef.Credential)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialAsync(in24seven.autenticateRef.Credential,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialByService(in24seven.autenticateRef.Credential,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialByServiceAsync(in24seven.autenticateRef.Credential,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.GetIdentitiesWithCredentialByServiceAsync(in24seven.autenticateRef.Credential,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.autenticateRef.Authenticate.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Token">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Token.ApplicationId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Token.Id">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Credential">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Credential.ApplicationId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Credential.IdentityId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Credential.Password">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Credential.Username">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Server">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Server.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Server.Type">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Client">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Client.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Client.Name">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.User">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.User.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.User.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.User.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.User.EmployeeId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Identity">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.User">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.Client">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.IsCurrent">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.IsDefault">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.IsProtected">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.Servers">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Identity.IsDisabled">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.Passport">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Passport.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Passport.Email">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Passport.Identities">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.Passport.SessionId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.AuthenticateByTokenCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.AuthenticateByTokenCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.AuthenticateByTokenCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.LoginCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.LoginCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.LoginCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.HasSessionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.HasSessionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.HasSessionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentityCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.GetIdentityCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.GetIdentitiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.SetIdentityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.SetIdentityCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.SetIdentityCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.SetIdentityByIdCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.SetIdentityByIdCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.SetIdentityByIdCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesWithCredentialCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesWithCredentialCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.GetIdentitiesWithCredentialCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesWithCredentialByServiceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.autenticateRef.GetIdentitiesWithCredentialByServiceCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.autenticateRef.GetIdentitiesWithCredentialByServiceCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.CompanyService">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.DeleteRelationsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.DeleteCompaniesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.SaveRelationsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.DeleteMapsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.SaveMapsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetCompaniesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetCustomerCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetIndustriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.SaveCustomerCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.DeleteCustomerCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetCustomerCategoryTreeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.SaveCompaniesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.companyRef.CompanyService.GetStatusesCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteRelations(in24seven.companyRef.Relation[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteRelationsAsync(in24seven.companyRef.Relation[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteRelationsAsync(in24seven.companyRef.Relation[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCompanies(in24seven.companyRef.Company[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCompaniesAsync(in24seven.companyRef.Company[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCompaniesAsync(in24seven.companyRef.Company[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveRelations(in24seven.companyRef.Relation[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveRelationsAsync(in24seven.companyRef.Relation[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveRelationsAsync(in24seven.companyRef.Relation[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteMaps(in24seven.companyRef.CompanyMap[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteMapsAsync(in24seven.companyRef.CompanyMap[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteMapsAsync(in24seven.companyRef.CompanyMap[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveMaps(in24seven.companyRef.CompanyMap[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveMapsAsync(in24seven.companyRef.CompanyMap[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveMapsAsync(in24seven.companyRef.CompanyMap[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCompanies(in24seven.companyRef.CompanySearchParameters,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCompaniesAsync(in24seven.companyRef.CompanySearchParameters,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCompaniesAsync(in24seven.companyRef.CompanySearchParameters,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCategories">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCategoriesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCategoriesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategories(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategoriesAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategoriesAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetIndustries">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetIndustriesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetIndustriesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCustomerCategories(in24seven.companyRef.KeyValuePair[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCustomerCategoriesAsync(in24seven.companyRef.KeyValuePair[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCustomerCategoriesAsync(in24seven.companyRef.KeyValuePair[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCustomerCategories(in24seven.companyRef.KeyValuePair[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCustomerCategoriesAsync(in24seven.companyRef.KeyValuePair[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.DeleteCustomerCategoriesAsync(in24seven.companyRef.KeyValuePair[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategoryTree">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategoryTreeAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetCustomerCategoryTreeAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCompanies(in24seven.companyRef.Company[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCompaniesAsync(in24seven.companyRef.Company[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.SaveCompaniesAsync(in24seven.companyRef.Company[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetStatuses">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetStatusesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.GetStatusesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.companyRef.CompanyService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.Relation">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.CompanyId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.FirstName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.LastName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.Role">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.RoleId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.PhoneNumbers">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.EmailAddresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Relation.Fax">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.PhoneNumbers">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumbers.Home">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumbers.Fax">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumbers.Mobile">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumbers.Primary">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumbers.Work">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.PhoneNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumber.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.PhoneNumber.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.KeyValuePair">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.KeyValuePair.Key">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.KeyValuePair.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.Category">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Category.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Category.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Category.ShowContact">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Category.ShowCompany">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.CompanySearchParameters">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanySearchParameters.ExternalId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanySearchParameters.CompanyId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanySearchParameters.CompanyName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanySearchParameters.ChangedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanySearchParameters.CompanyEmail">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.CompanyMap">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanyMap.MapType">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanyMap.ExternalId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.CompanyMap.CompanyId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.Address">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.Street">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.State">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.PostalCode">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.PostalArea">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.City">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Address.Country">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.Addresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Addresses.Post">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Addresses.Delivery">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Addresses.Visit">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Addresses.Invoice">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.APIException">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.APIException.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.APIException.Message">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.APIException.StackTrace">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.Company">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.APIException">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.ExternalId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.OrganizationNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.FirstName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.NickName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Addresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.PhoneNumbers">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.EmailAddresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Url">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Country">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Note">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.InvoiceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Username">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Password">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.IncorporationDate">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.DateCreated">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Status">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.PriceList">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Owner">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.BankAccountNo">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.TermsOfDeliveryId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.AccountDebit">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.AccountCredit">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Discount">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.TypeGroup">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.ShareCapital">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.NumberOfEmployees">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Turnover">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Profit">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.IndustryId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.MemberNo">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.BlockInvoice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Relations">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Maps">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.DistributionMethod">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.CurrencyId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.PaymentTime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.GlnNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Factoring">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.FactoringSpecified">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.LedgerCustomerAccount">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.LedgerSupplierAccount">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.VatNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.Private">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.Company.PrivateSpecified">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.EmailAddresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddresses.Home">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddresses.Invoice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddresses.Primary">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddresses.Work">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddresses.Alternative">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.EmailAddress">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddress.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddress.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.EmailAddress.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.CompanyType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CompanyType.None">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CompanyType.Lead">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CompanyType.Consumer">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CompanyType.Business">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CompanyType.Supplier">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DistributionMethod">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.DistributionMethod.Unchanged">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.DistributionMethod.Print">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.DistributionMethod.EMail">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.DistributionMethod.ElectronicInvoice">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.DistributionMethod.Default">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.CurrencyType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LOCAL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AED">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AFN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ALL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AMD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ANG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AOA">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ARS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AUD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AWG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.AZN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BAM">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BBD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BDT">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BGN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BHD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BIF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BMD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BND">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BOB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BOV">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BRL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BSD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BTN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BWP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BYN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BYR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.BZD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CAD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CDF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CHE">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CHF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CHW">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CLF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CLP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CNY">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.COP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.COU">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CRC">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CUC">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CUP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CVE">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.CZK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.DJF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.DKK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.DOP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.DZD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.EEK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.EGP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ERN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ETB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.EUR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.FJD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.FKP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GBP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GEL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GHS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GIP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GMD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GNF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GTQ">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.GYD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.HKD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.HNL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.HRK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.HTG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.HUF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.IDR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ILS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.INR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.IQD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.IRR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ISK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.JMD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.JOD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.JPY">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KES">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KGS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KHR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KMF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KPW">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KRW">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KWD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KYD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.KZT">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LAK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LBP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LKR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LRD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LSL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LTL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LVL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.LYD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MAD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MDL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MGA">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MKD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MMK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MNT">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MOP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MRO">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MTL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MUR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MVR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MWK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MXN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MXV">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MYR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.MZN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NAD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NGN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NIO">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NOK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NPR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.NZD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.OMR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PAB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PEN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PGK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PHP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PKR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PLN">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.PYG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.QAR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.RON">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.RSD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.RUB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.RWF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SAR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SBD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SCR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SDG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SEK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SGD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SHP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SKK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SLL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SOS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SRD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.STD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SYP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.SZL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.THB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TJS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TMT">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TND">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TOP">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TRY">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TTD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TWD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.TZS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.UAH">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.UGX">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.USD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.UYU">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.UZS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.VEF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.VND">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.VUV">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.WST">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XAF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XAG">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XAU">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XBA">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XBB">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XBC">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XBD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XCD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XDR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XFU">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XOF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XPD">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XPF">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XPT">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XTS">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.XXX">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.YER">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ZAR">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ZMK">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ZWL">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.companyRef.CurrencyType.ZWD">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteRelationsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteRelationsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.DeleteRelationsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteCompaniesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteCompaniesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.DeleteCompaniesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveRelationsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveRelationsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.SaveRelationsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteMapsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteMapsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.DeleteMapsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveMapsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveMapsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.SaveMapsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCompaniesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCompaniesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetCompaniesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCustomerCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCustomerCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetCustomerCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetIndustriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetIndustriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetIndustriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveCustomerCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveCustomerCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.SaveCustomerCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteCustomerCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.DeleteCustomerCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.DeleteCustomerCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCustomerCategoryTreeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetCustomerCategoryTreeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetCustomerCategoryTreeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveCompaniesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.SaveCompaniesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.SaveCompaniesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetStatusesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.companyRef.GetStatusesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.companyRef.GetStatusesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.PersonService">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonIdCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.SavePersonCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonIdsByUserNameCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonIdByCompanyIdCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonsDetailedCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.MakeRelationCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetRelationsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetRelationsChangedAfterCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.DeleteRelationCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetNotesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetAllNotesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.AddNoteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.DeleteNoteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.DeleteNoteByIdCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetCategoryListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.GetPersonCategoryListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.AddCategoryToPersonCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.personRef.PersonService.RemoveCategoryFromPersonCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonId(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.SavePerson(in24seven.personRef.PersonItem)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.SavePersonAsync(in24seven.personRef.PersonItem)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.SavePersonAsync(in24seven.personRef.PersonItem,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdsByUserName(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdsByUserNameAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdsByUserNameAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdByCompanyId(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdByCompanyIdAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonIdByCompanyIdAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersons(in24seven.personRef.PersonSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonsAsync(in24seven.personRef.PersonSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonsAsync(in24seven.personRef.PersonSearchParameters,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonsDetailed(in24seven.personRef.PersonSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonsDetailedAsync(in24seven.personRef.PersonSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonsDetailedAsync(in24seven.personRef.PersonSearchParameters,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.MakeRelation(in24seven.personRef.RelationData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.MakeRelationAsync(in24seven.personRef.RelationData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.MakeRelationAsync(in24seven.personRef.RelationData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelations(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelationsAsync(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelationsAsync(System.Int64,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelationsChangedAfter(System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelationsChangedAfterAsync(System.DateTime)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetRelationsChangedAfterAsync(System.DateTime,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteRelation(System.Int64,System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteRelationAsync(System.Int64,System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteRelationAsync(System.Int64,System.Int64,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetNotes(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetNotesAsync(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetNotesAsync(System.Int64,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetAllNotes">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetAllNotesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetAllNotesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddNote(in24seven.personRef.NoteData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddNoteAsync(in24seven.personRef.NoteData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddNoteAsync(in24seven.personRef.NoteData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNote(in24seven.personRef.NoteData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNoteAsync(in24seven.personRef.NoteData)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNoteAsync(in24seven.personRef.NoteData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNoteById(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNoteByIdAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.DeleteNoteByIdAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetCategoryList">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetCategoryListAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetCategoryListAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonCategoryList(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonCategoryListAsync(System.Int64)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.GetPersonCategoryListAsync(System.Int64,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddCategoryToPerson(System.Int64,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddCategoryToPersonAsync(System.Int64,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.AddCategoryToPersonAsync(System.Int64,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.RemoveCategoryFromPerson(System.Int64,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.RemoveCategoryFromPersonAsync(System.Int64,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.RemoveCategoryFromPersonAsync(System.Int64,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.personRef.PersonService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.Authentication">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.Username">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.Password">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.UserId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.EmployeeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.ConsumerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Authentication.AnyAttr">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.Category">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Category.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Category.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Category.Note">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.NoteData">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.Subject">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.EmployeeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.DateAdded">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.Date">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.NoteData.PersonId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.PersonSearchParameters">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.ChangedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.ConsumerPersonNo">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.Email">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.EmployeeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.GetRelationData">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.IsEmployee">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonSearchParameters.Role">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.TriState">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.TriState.none">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.TriState.True">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.TriState.False">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.RelationData">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.Email">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.Mobile">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.Phone">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.RelationData.Title">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.Address">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.City">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.Country">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.County">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.PostalArea">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.PostalCode">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.State">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.Street">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.Address.Type">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.AddressType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.AddressType.Post">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.PhoneNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PhoneNumber.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PhoneNumber.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PhoneNumber.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.PhoneNumberType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.PhoneNumberType.Primary">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.PhoneNumberType.Mobile">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.FaxNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.FaxNumber.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.FaxNumber.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.FaxNumber.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.FaxNumberType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.FaxNumberType.Primary">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.EmailAddress">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.EmailAddress.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.EmailAddress.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.EmailAddress.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.EmailAddressType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.EmailAddressType.Home">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.EmailAddressType.Primary">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.EmailAddressType.Alternative">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.PersonItem">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Comment">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.ConsumerPersonNo">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Country">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.DateOfBirth">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Department">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.EmailAddresses">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.EmployeeNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.FaxNumber">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.FirstName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Gender">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.LastName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Nickname">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.PersonalStatus">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.PhoneNumbers">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.PostAddress">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.RelationData">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Url">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.WebPassword">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.WebUserName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.Workplace">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.WorkPosition">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.IsPrivate">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.IsPrivateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.PersonItem.EmployeeId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.Gender">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.Gender.NoChange">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.Gender.Unknown">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.Gender.Female">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.personRef.Gender.Male">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonIdCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.SavePersonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.SavePersonCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.SavePersonCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdsByUserNameCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdsByUserNameCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonIdsByUserNameCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdByCompanyIdCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonIdByCompanyIdCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonIdByCompanyIdCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonsDetailedCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonsDetailedCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonsDetailedCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.MakeRelationCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.MakeRelationCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.MakeRelationCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetRelationsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetRelationsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetRelationsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetRelationsChangedAfterCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetRelationsChangedAfterCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetRelationsChangedAfterCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.DeleteRelationCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetNotesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetNotesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetNotesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetAllNotesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetAllNotesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetAllNotesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.AddNoteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.AddNoteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.AddNoteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.DeleteNoteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.DeleteNoteByIdCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetCategoryListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetCategoryListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetCategoryListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonCategoryListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.GetPersonCategoryListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.personRef.GetPersonCategoryListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.AddCategoryToPersonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.personRef.RemoveCategoryFromPersonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.ProductService">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.SetStockQuantityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetProductsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.SaveProductsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.DeleteProductsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetPriceListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetAllPriceListsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.SaveCategoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetDiscountMatrixPriceGroupCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.productRef.ProductService.GetDiscountMatrixCategoryCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SetStockQuantity(System.Int32,System.Decimal)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SetStockQuantityAsync(System.Int32,System.Decimal)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SetStockQuantityAsync(System.Int32,System.Decimal,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetProducts(in24seven.productRef.ProductSearchParameters,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetProductsAsync(in24seven.productRef.ProductSearchParameters,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetProductsAsync(in24seven.productRef.ProductSearchParameters,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveProducts(in24seven.productRef.Product[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveProductsAsync(in24seven.productRef.Product[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveProductsAsync(in24seven.productRef.Product[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.DeleteProducts(in24seven.productRef.Product[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.DeleteProductsAsync(in24seven.productRef.Product[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.DeleteProductsAsync(in24seven.productRef.Product[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetPriceList(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetPriceListAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetPriceListAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetAllPriceLists">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetAllPriceListsAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetAllPriceListsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetCategories(System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetCategoriesAsync(System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetCategoriesAsync(System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveCategories(in24seven.productRef.Category[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveCategoriesAsync(in24seven.productRef.Category[])">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.SaveCategoriesAsync(in24seven.productRef.Category[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixPriceGroup">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixPriceGroupAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixPriceGroupAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixCategory">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixCategoryAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.GetDiscountMatrixCategoryAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.productRef.ProductService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.ProductSearchParameters">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.CategoryId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.No">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.EAN1">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.Price">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductSearchParameters.ProductIds">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.Discount">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Discount.PriceGroupId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Discount.CategoryId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Discount.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Discount.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.Category">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Category.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Category.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Category.No">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Category.ParentId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Category.APIException">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.APIException">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.APIException.Type">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.APIException.Message">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.APIException.StackTrace">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.ProductPriceList">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductPriceList.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductPriceList.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductPriceList.IncVat">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.ProductPriceList.Currency">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.KeyValuePair">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.KeyValuePair.Key">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.KeyValuePair.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.Product">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.CashPriceIncTax">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.WebPrice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.SupplierId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.TaxRate">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Stock">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.StatusId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.CategoryId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.PriceGroupID">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.InPrice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.DescriptionLong">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Cost">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.EAN1">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Price">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.No">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.APIException">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Weight">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.MinimumStock">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.OrderProposal">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.StockLocation">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.SupplierProductCode">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.SupplierProductName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.Web">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.WebSpecified">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.ProductCode">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.StockControlled">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.StockControlledSpecified">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.NewOffer">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.NewOfferSpecified">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.NewProduct">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.Product.NewProductSpecified">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SetStockQuantityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SetStockQuantityCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.SetStockQuantityCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetProductsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetProductsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetProductsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SaveProductsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SaveProductsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.SaveProductsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.DeleteProductsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.DeleteProductsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.DeleteProductsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetPriceListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetPriceListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetPriceListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetAllPriceListsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetAllPriceListsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetAllPriceListsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SaveCategoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.SaveCategoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.SaveCategoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetDiscountMatrixPriceGroupCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetDiscountMatrixPriceGroupCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetDiscountMatrixPriceGroupCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetDiscountMatrixCategoryCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.productRef.GetDiscountMatrixCategoryCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.productRef.GetDiscountMatrixCategoryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+    </members>
+</doc>

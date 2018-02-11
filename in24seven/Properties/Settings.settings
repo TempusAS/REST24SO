@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="in24seven.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="in24seven_productRef_ProductService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.24sevenoffice.com/Logistics/Product/V001/ProductService.asmx</Value>
+    </Setting>
+    <Setting Name="in24seven_autenticateRef_Authenticate" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.24sevenoffice.com/authenticate/v001/authenticate.asmx</Value>
+    </Setting>
+    <Setting Name="in24seven_companyRef_CompanyService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.24sevenoffice.com/CRM/Company/V001/CompanyService.asmx</Value>
+    </Setting>
+    <Setting Name="in24seven_personRef_PersonService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.24sevenoffice.com/CRM/Contact/PersonService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
