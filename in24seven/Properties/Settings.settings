@@ -14,5 +14,8 @@
     <Setting Name="in24seven_personRef_PersonService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://webservices.24sevenoffice.com/CRM/Contact/PersonService.asmx</Value>
     </Setting>
+    <Setting Name="in24seven_timeRef_TimeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservices.24sevenoffice.com/timesheet/v001/timeservice.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

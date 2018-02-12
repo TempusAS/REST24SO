@@ -496,6 +496,11 @@
             Return a list of persons from PersoonService
             </summary>
         </member>
+        <member name="M:in24seven.Controllers.TimeController.Post(in24seven.Models.Hour)">
+            <summary>
+            Add a new Hour to 24SO using  TimeService.SaveHour 
+            </summary>
+        </member>
         <member name="T:in24seven.autenticateRef.Authenticate">
             <remarks/>
         </member>
@@ -3137,6 +3142,660 @@
             <remarks/>
         </member>
         <member name="P:in24seven.productRef.GetDiscountMatrixCategoryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.TimeService">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetTimeSettingsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetWorkTypeListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetProjectListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetProjectDataCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.SaveHourCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.DeleteHourCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.AddCostCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetCostsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetHoursCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetSalaryTypesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.timeRef.TimeService.GetHoursForApprovalCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetTimeSettings">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetTimeSettingsAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetTimeSettingsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetWorkTypeList(in24seven.timeRef.WorkTypeSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetWorkTypeListAsync(in24seven.timeRef.WorkTypeSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetWorkTypeListAsync(in24seven.timeRef.WorkTypeSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectList(in24seven.timeRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectListAsync(in24seven.timeRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectListAsync(in24seven.timeRef.ProjectSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectData(in24seven.timeRef.ProjectDataSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectDataAsync(in24seven.timeRef.ProjectDataSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetProjectDataAsync(in24seven.timeRef.ProjectDataSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.SaveHour(in24seven.timeRef.Hour)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.SaveHourAsync(in24seven.timeRef.Hour)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.SaveHourAsync(in24seven.timeRef.Hour,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.DeleteHour(in24seven.timeRef.Hour)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.DeleteHourAsync(in24seven.timeRef.Hour)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.DeleteHourAsync(in24seven.timeRef.Hour,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.AddCost(in24seven.timeRef.Cost)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.AddCostAsync(in24seven.timeRef.Cost)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.AddCostAsync(in24seven.timeRef.Cost,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetCosts(in24seven.timeRef.CostSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetCostsAsync(in24seven.timeRef.CostSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetCostsAsync(in24seven.timeRef.CostSearchParameters,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHours(in24seven.timeRef.HourSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHoursAsync(in24seven.timeRef.HourSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHoursAsync(in24seven.timeRef.HourSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetSalaryTypes">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetSalaryTypesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetSalaryTypesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHoursForApproval(in24seven.timeRef.ApprovalSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHoursForApprovalAsync(in24seven.timeRef.ApprovalSearchParameters)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.GetHoursForApprovalAsync(in24seven.timeRef.ApprovalSearchParameters,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.timeRef.TimeService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.KeyValuePair">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.KeyValuePair.Key">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.KeyValuePair.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.ApprovalSearchParameters">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ApprovalSearchParameters.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ApprovalSearchParameters.ProjectId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.SalaryType">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.SalaryType.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.SalaryType.Name">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.HourSearch">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.Status">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.ProjectId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.IncludeSalaryType">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.StartTime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.HourSearch.StopTime">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.HourStatus">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.HourStatus.none">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.HourStatus.Registered">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.HourStatus.Locked">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.HourStatus.Approved">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.HourStatus.Rejected">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.CostSearchParameters">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.CostSearchParameters.ProjectId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.CostSearchParameters.ContactId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.Cost">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.DateRegistered">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.ProductId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.SupplierCompanyId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.Quantity">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.InPrice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.ProjectId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.Price">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Cost.ContactId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.Hour">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.TypeOfWorkId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.StartTime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.StopTime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.TotalHours">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.TotalHoursInvoice">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.ProjectId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Locked">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Approved">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.ApprovedBy">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.ProjectTaskId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Costs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.NeedApproval">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.SalaryTypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.OrderId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Hour.Price">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.TriState">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TriState.unknown">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TriState.none">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TriState.True">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TriState.False">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.DateStart">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.DateStop">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Overtime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Parent">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Priority">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Project">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.ProjectLink">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Status">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.WorkTypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Estimate">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Registered">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Task.Participants">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.ProjectData">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectData.Project">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectData.WorkTypes">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectData.Tasks">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Enabled">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.RawName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.NameDisplay">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.QuickListed">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.DateStart">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.DateStop">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.CustomerName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Owner">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Pipeline">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.TypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.TypeName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.StatusId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.StatusName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.NeedApproval">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.MultiCustomer">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.WorkTypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.WorkTypeName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.TimeReg">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Version">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.IsFoldersAdded">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.Project.Participants">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.ProjectNameType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.ProjectNameType.unknown">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.ProjectNameType.Plain">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.ProjectNameType.Company_Project">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.ProjectNameType.Project_Company">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.TimeRegType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TimeRegType.unknown">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TimeRegType.WorkType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.timeRef.TimeRegType.Task">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.WorkType">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.Invoiceable">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.Price">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkType.ProductId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.ProjectDataSearch">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectDataSearch.ProjectId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectDataSearch.ContactId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectDataSearch.ProjectOnly">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.ProjectSearch">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.MyProjects">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.AllOpenProjects">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.Search">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.ChangedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.StartedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.ProjectSearch.StartedBefore">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.WorkTypeSearch">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkTypeSearch.Active">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.WorkTypeSearch.ProjectId">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetTimeSettingsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetTimeSettingsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetTimeSettingsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetWorkTypeListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetWorkTypeListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetWorkTypeListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetProjectListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetProjectListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetProjectListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetProjectDataCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetProjectDataCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetProjectDataCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.SaveHourCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.SaveHourCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.SaveHourCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.DeleteHourCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.DeleteHourCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.DeleteHourCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.AddCostCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetCostsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetCostsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetCostsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetHoursCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetHoursCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetHoursCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetSalaryTypesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetSalaryTypesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetSalaryTypesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetHoursForApprovalCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.timeRef.GetHoursForApprovalCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.timeRef.GetHoursForApprovalCompletedEventArgs.Result">
             <remarks/>
         </member>
     </members>

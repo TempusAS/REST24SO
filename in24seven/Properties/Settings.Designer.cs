@@ -62,5 +62,15 @@ namespace in24seven.Properties {
                 return ((string)(this["in24seven_personRef_PersonService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://webservices.24sevenoffice.com/timesheet/v001/timeservice.asmx")]
+        public string in24seven_timeRef_TimeService {
+            get {
+                return ((string)(this["in24seven_timeRef_TimeService"]));
+            }
+        }
     }
 }
