@@ -496,9 +496,24 @@
             Return a list of persons from PersoonService
             </summary>
         </member>
-        <member name="M:in24seven.Controllers.TimeController.Post(in24seven.Models.Hour)">
+        <member name="M:in24seven.Controllers.ProductController.Get(System.Int32)">
+            <summary>
+            Return a list of Products. CategoryId must be set
+            </summary>
+        </member>
+        <member name="M:in24seven.Controllers.ProjectController.Get">
+            <summary>
+            Return a list of Projects 
+            </summary>
+        </member>
+        <member name="M:in24seven.Controllers.TimeController.Post(in24seven.Models.LassReg)">
             <summary>
             Add a new Hour to 24SO using  TimeService.SaveHour 
+            </summary>
+        </member>
+        <member name="M:in24seven.Controllers.VehicleController.Get">
+            <summary>
+            Return a list of Vehicles
             </summary>
         </member>
         <member name="T:in24seven.autenticateRef.Authenticate">
@@ -3142,6 +3157,498 @@
             <remarks/>
         </member>
         <member name="P:in24seven.productRef.GetDiscountMatrixCategoryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.ProjectService">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectNameListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectListCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectsDetailedCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetSingleProjectCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectTasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.SaveProjectTaskCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetMyProjectTasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectRolesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectTypesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetProjectStatusesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.GetPipeLinesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:in24seven.projectRef.ProjectService.SaveProjectCompleted">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectNameList">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectNameListAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectNameListAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectList(in24seven.projectRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectListAsync(in24seven.projectRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectListAsync(in24seven.projectRef.ProjectSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectsDetailed(in24seven.projectRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectsDetailedAsync(in24seven.projectRef.ProjectSearch)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectsDetailedAsync(in24seven.projectRef.ProjectSearch,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetSingleProject(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetSingleProjectAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetSingleProjectAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTasks(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTasksAsync(System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTasksAsync(System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProjectTask(in24seven.projectRef.Task)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProjectTaskAsync(in24seven.projectRef.Task)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProjectTaskAsync(in24seven.projectRef.Task,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetMyProjectTasks">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetMyProjectTasksAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetMyProjectTasksAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectRoles">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectRolesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectRolesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTypes">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTypesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectTypesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectStatuses">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectStatusesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetProjectStatusesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetPipeLines">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetPipeLinesAsync">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.GetPipeLinesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProject(in24seven.projectRef.Project)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProjectAsync(in24seven.projectRef.Project)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.SaveProjectAsync(in24seven.projectRef.Project,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:in24seven.projectRef.ProjectService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.ProjectShort">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectShort.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectShort.Name">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.Status">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Status.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Status.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Status.Active">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.KeyValuePair">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.KeyValuePair.Key">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.KeyValuePair.Value">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.Role">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Role.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Role.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Role.Parent">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.DateStart">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.DateStop">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Overtime">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Parent">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Priority">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Project">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.ProjectLink">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Status">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.WorkTypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Estimate">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Registered">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Task.Participants">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Id">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Enabled">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Name">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.RawName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.NameDisplay">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.QuickListed">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.DateChanged">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.DateStart">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.DateStop">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.CustomerName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Owner">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Pipeline">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.TypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.TypeName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.StatusId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.StatusName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.NeedApproval">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.MultiCustomer">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Description">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.WorkTypeId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.WorkTypeName">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.TimeReg">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Version">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.IsFoldersAdded">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.OverrideWorkTypeTask">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.Project.Participants">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.ProjectNameType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.ProjectNameType.Plain">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.ProjectNameType.Company_Project">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.ProjectNameType.Project_Company">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.TriState">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.TriState.none">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.TriState.True">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.TriState.False">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.TimeRegType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.TimeRegType.WorkType">
+            <remarks/>
+        </member>
+        <member name="F:in24seven.projectRef.TimeRegType.Task">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.ProjectSearch">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.MyProjects">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.AllOpenProjects">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.CustomerId">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.Search">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.ChangedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.StartedAfter">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.ProjectSearch.StartedBefore">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectNameListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectNameListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectNameListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectListCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectListCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectListCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectsDetailedCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectsDetailedCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectsDetailedCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetSingleProjectCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetSingleProjectCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetSingleProjectCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectTasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectTasksCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectTasksCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.SaveProjectTaskCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.SaveProjectTaskCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.SaveProjectTaskCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetMyProjectTasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetMyProjectTasksCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetMyProjectTasksCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectRolesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectRolesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectRolesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectTypesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectTypesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectTypesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectStatusesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetProjectStatusesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetProjectStatusesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetPipeLinesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.GetPipeLinesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.GetPipeLinesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.SaveProjectCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:in24seven.projectRef.SaveProjectCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:in24seven.projectRef.SaveProjectCompletedEventArgs.Result">
             <remarks/>
         </member>
         <member name="T:in24seven.timeRef.TimeService">

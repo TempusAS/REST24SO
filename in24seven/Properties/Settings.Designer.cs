@@ -72,5 +72,15 @@ namespace in24seven.Properties {
                 return ((string)(this["in24seven_timeRef_TimeService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://webservices.24sevenoffice.com/Project/V001/ProjectService.asmx")]
+        public string in24seven_projectRef_ProjectService {
+            get {
+                return ((string)(this["in24seven_projectRef_ProjectService"]));
+            }
+        }
     }
 }

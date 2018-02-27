@@ -14,7 +14,7 @@ namespace in24seven.Controllers
     {
         static private CookieContainer cookieContainer = null;
         static private DateTime? timeOfLastLogin = null;
-
+        
         protected CookieContainer GetCookies()
         {
             return cookieContainer;
@@ -24,7 +24,7 @@ namespace in24seven.Controllers
         {
             if (cookieContainer == null || 
                 timeOfLastLogin == null || 
-                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Hours > 2))
+                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Minutes > 10))
             {
                 var authClient = new autenticateRef.Authenticate()
                 {
