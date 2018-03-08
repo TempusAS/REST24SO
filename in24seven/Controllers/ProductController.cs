@@ -20,7 +20,7 @@ namespace in24seven.Controllers
             var ret = new List<Models.Product>();
             foreach (var product in products)
                 ret.Add(new Models.Product { Id = product.Id, Name = product.Name});
-            return ret;
+            return ret.OrderBy(c => c.Name).ToList<Models.Product>();
         }
     }
 }

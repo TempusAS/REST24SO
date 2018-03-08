@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace in24seven.Controllers
 {
@@ -15,7 +16,7 @@ namespace in24seven.Controllers
             foreach (var company in companies)
                 if (company.Type.ToString() == Type || Type.Length == 0 )
                     ret.Add(new Models.Company { Type = company.Type.ToString(), Name = company.Name, Id = company.Id.ToString() });
-            return ret;
+            return ret.OrderBy(c => c.Name).ToList<Models.Company>();
         }
     }
 }

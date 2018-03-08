@@ -24,7 +24,7 @@ namespace in24seven.Controllers
             foreach (var category in categories)
                 ret.Add(new Models.Category { Nr = category.No, Name = category.Name });
 
-            return ret;
+            return ret.OrderBy(c => c.Name).ToList<Models.Category>();
 
         }
     }

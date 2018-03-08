@@ -24,7 +24,7 @@ namespace in24seven.Controllers
         {
             if (cookieContainer == null || 
                 timeOfLastLogin == null || 
-                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Minutes > 10))
+                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Minutes > 2))
             {
                 var authClient = new autenticateRef.Authenticate()
                 {

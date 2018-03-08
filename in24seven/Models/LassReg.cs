@@ -16,6 +16,7 @@ namespace in24seven.Models
         public string Merknad { get; set; }
         public string lassnr { get; set; }
         public string LasteSted { get; set; }
+        public string TippetSted { get; set; }
         public string TidLastet { get; set; }
         public string TidTippet { get; set; }
         public string TypeBil { get; set; }

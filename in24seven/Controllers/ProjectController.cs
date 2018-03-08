@@ -22,7 +22,7 @@ namespace in24seven.Controllers
             var ret = new List<Models.Project>();
             foreach (var project in projects)
                 ret.Add(new Models.Project { Id = project.Id, Name = project.Name, CustomerId = project.CustomerId, MultiCustomer = project.MultiCustomer});
-            return ret;
+            return ret.OrderBy(c => c.Name).ToList<Models.Project>();
         }
     }
 }

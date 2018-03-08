@@ -22,7 +22,7 @@ namespace in24seven.Controllers
             var ret = new List<Models.Person>();
             foreach (var person in persons)
                     ret.Add(new Models.Person { Id = person.Id.ToString(), Name = person.FirstName + " " + person.LastName});
-            return ret;
+            return ret.OrderBy(c => c.Name).ToList<Models.Person>();
         }
     }
 }
