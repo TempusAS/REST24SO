@@ -501,7 +501,7 @@
             Return a list of Products. CategoryId must be set
             </summary>
         </member>
-        <member name="M:in24seven.Controllers.ProjectController.Get">
+        <member name="M:in24seven.Controllers.ProjectController.Get(System.Int32)">
             <summary>
             Return a list of Projects 
             </summary>

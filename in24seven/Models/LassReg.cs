@@ -20,6 +20,7 @@ namespace in24seven.Models
         public string TidLastet { get; set; }
         public string TidTippet { get; set; }
         public string TypeBil { get; set; }
+        public string TransportType { get; set; }
         public string Massetype { get; set; }
         public string Ventetid { get; set; }
         public string AntallTonn { get; set; }
@@ -28,5 +29,6 @@ namespace in24seven.Models
         public string GodkjenteVentetid { get; set; }
         public string ProsjektSluttKl { get; set; }
         public string kommentarerOmLasset { get; set; }
+        public string Bomverdier { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace in24seven.Controllers
             var workTypeList = timeClient.GetWorkTypeList(wts);
             var ret = new List<Models.Vehicle>();
             foreach (var wt in workTypeList)
-                ret.Add(new Models.Vehicle { Id = wt.Id, Name = wt.Name});
+                ret.Add(new Models.Vehicle { Id = wt.Id.ToString().Trim(), Name = wt.Name});
             return ret.OrderBy(c => c.Name).ToList<Models.Vehicle>();
         }
 

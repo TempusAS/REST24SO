@@ -13,7 +13,7 @@ namespace in24seven.Controllers
     public class In24SevenController : ApiController
     {
         static private CookieContainer cookieContainer = null;
-        static private DateTime? timeOfLastLogin = null;
+        static protected DateTime? timeOfLastLogin = null;
         
         protected CookieContainer GetCookies()
         {
@@ -24,7 +24,7 @@ namespace in24seven.Controllers
         {
             if (cookieContainer == null || 
                 timeOfLastLogin == null || 
-                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Minutes > 2))
+                (DateTime.Now.Subtract((DateTime)timeOfLastLogin).Minutes > 1))
             {
                 var authClient = new autenticateRef.Authenticate()
                 {

@@ -13,15 +13,17 @@ namespace in24seven.Controllers
         /// <summary>
         /// Return a list of Projects 
         /// </summary>
-        public List<Models.Project> Get()
+        public List<Models.Project> Get(int customerId = 0)
         {
+
             var projectClient = new projectRef.ProjectService() { CookieContainer = GetCookies() };
-            var sp = new projectRef.ProjectSearch() { ChangedAfter = new DateTime(2000, 1, 1) };
-            var projects = projectClient.GetProjectList(sp);
+            var sp = new projectRef.ProjectSearch() { ChangedAfter = new DateTime(2000, 1, 1)};
+            var projects = projectClient.GetProjectsDetailed(sp);
 
             var ret = new List<Models.Project>();
             foreach (var project in projects)
-                ret.Add(new Models.Project { Id = project.Id, Name = project.Name, CustomerId = project.CustomerId, MultiCustomer = project.MultiCustomer});
+                if (customerId == 0 || customerId == project.CustomerId)
+                    ret.Add(new Models.Project { Id = project.Id.ToString().Trim(), Name = project.Name, CustomerId = project.CustomerId, MultiCustomer = project.MultiCustomer});
             return ret.OrderBy(c => c.Name).ToList<Models.Project>();
         }
     }
