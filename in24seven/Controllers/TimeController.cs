@@ -89,7 +89,7 @@ namespace in24seven.Controllers
                     StartTime = getdt(lr.Dato, lr.TidLastet),
                     StopTime = getdt(lr.Dato, lr.TidTippet),
                     ProjectId = projectId,
-                    Description = lr.kommentarerOmLasset,
+                    Description = lr.kommentarerOmLasset +  ( (String.IsNullOrEmpty(lr.foto)) ? "" : "\n" + lr.foto),
                     ProjectTaskId = 0,
                     SalaryTypeId = 0,
                     TotalHours = tsLastetTippet.Hours + (tsLastetTippet.Minutes / 60.0),

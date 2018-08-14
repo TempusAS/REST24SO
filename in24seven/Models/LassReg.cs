@@ -30,5 +30,6 @@ namespace in24seven.Models
         public string ProsjektSluttKl { get; set; }
         public string kommentarerOmLasset { get; set; }
         public string Bomverdier { get; set; }
+        public string foto { get; set; }
     }
 }
